@@ -1,4 +1,4 @@
-name: Deploy aplication aws
+name: Deploy aplication github
 
 on:
     push:
