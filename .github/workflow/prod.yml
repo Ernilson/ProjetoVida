@@ -24,5 +24,5 @@ jobs:
         run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
       - name: Build docker image
         run: docker build -t ernilson/vida:1.0.0 .
-      - name: Push image docker
+      - name: Push docker image
         run: docker push ernilson/vida:1.0.0
