@@ -11,12 +11,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Set up JDK 17
+      - name: Setup Java
         uses: actions/setup-java@v3
         with:
-          java-version: '17'
-
+           java-version: '17'
+           distribution: 'temurin'
+           cache: maven
+           
       - name: Build with Maven
         run: mvn -B package
+      - name: Login Docker Hub
+        run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
+      - name: Build docker image
+        run: docker build -t ernilson/vida:1.0.0 .
+      - name: Push docker image
+        run: docker push ernilson/vida:1.0.0
