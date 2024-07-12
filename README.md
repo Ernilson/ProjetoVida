@@ -9,3 +9,5 @@ Tecnologias ultiliazadas:
 - Mysql
 
 https://github.com/Ernilson/ProjetoVida/issues/1#issue-2096738712
+
+necessario encontrar uma forma de subir projetos para o github de forma não convencional
